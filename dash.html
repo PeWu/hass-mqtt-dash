@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="dashApp" ng-controller="DashController as ctrl">
+<head>
+  <meta charset="utf-8" />
+  <title>Dash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.angularjs.org/1.6.6/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <script src="config.js"></script>
+  <script src="dash.js"></script>
+</head>
+<body ng-cloak="">
+  <div class="container">
+    <table class="table table-striped table-sm">
+      <tr ng-repeat="entry in ctrl.data | toArray | orderBy:'entity_id'">
+        <td>{{entry.entity_id}}</td>
+        <td>{{entry.state}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
