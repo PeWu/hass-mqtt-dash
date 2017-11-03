@@ -1,4 +1,4 @@
-var config = {
+dashApp.value('hassMqttConfig', {
   mqttHost: 'example.org',
   mqttPort: 9001,
   mqttUsername: 'user',
@@ -9,4 +9,4 @@ var config = {
   keys: [
     '#',
   ]
-};
+});
